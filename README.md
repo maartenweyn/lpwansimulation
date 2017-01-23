@@ -23,14 +23,14 @@ In Europe LoraWAN has 3 125 kHz channels in the EU 863-870 MHz SRD band. The def
 LoRa uses a modulation based on spread-spectrum techniques and a variation of chirp spread spectrum[1]. LoRaWAN specifies data rates for LoRA between 0.3 kbps to 22 kbps based on the spreading factor. The LoRaWAN network manages the used spreading factor and transmitted signal power to optimize performance and scalability This means that when the network has become too dense, new gateways can be added and the data rate and RF output power adapted (14, 11, 8, 5 and 2 dBm)
 
 The relation between Spreading Factor (SF), equivalent bit rate and sensitivity is described in the Semtech AN1200[2]:
- Spreading Factor   | Equivalent bit rate (kb/s) | Sensitivity (dBm)
- ------------------ | -------------------------- | -----------------
- 12	| 0.293	| -137
- 11	| 0.537 | 	 -134.5
- 10	| 0.976 | 	 -132
- 9	| 1.757	|  -129
- 8	| 3.125	|  -126
- 7	| 5.468 | 	 -123
+| Spreading Factor   | Equivalent bit rate (kb/s) | Sensitivity (dBm) |
+| ------------------ | -------------------------- | ----------------- |
+| 12	| 0.293	| -137 |
+| 11	| 0.537 | 	 -134.5 |
+| 10	| 0.976 | 	 -132 |
+| 9	| 1.757	|  -129 |
+| 8	| 3.125	|  -126 |
+| 7	| 5.468 | 	 -123 |
 
 In this article I will calculate what is the maximum number of messages which can be send using this 3 channels per unit time (minute).
 
@@ -47,27 +47,27 @@ The image below shows a simulation of 500 random messages where every message co
 
 The next figure shows the relation of the number of collisions while sending up to 1000 (25 byte) messages / minute with a randomly chosen SF (between 12 en 7).
 
-
+![GCapacity Lora](/images/lora_1000_dev_sf_12_7)
 
 If we look into an ideal case where we only use SF7, resulting a short message (36 ms).
 
-
+![GCapacity Lora](/images/lora_1000_dev_sf_7_7)
 
 And the worst case (using SF12, resulting in 682 ms)
 
-
+![GCapacity Lora](/images/lora_1000_dev_sf_12_12)
 
 ### Sigfox
 Sigfox sends 3 messages using on a random frequency within a 200 kHz band in the 868 SDR band. Sigfox uses 100Hz ultra-narrowband GFSK modulation.
 The following simulation shows these 200 kHz when 1000 devices are transmitting within 1 minutes, in total 3000 messages are being send.
 
-
+![GCapacity Lora](/images/sigfox_spectrum_1000_dev_3_tx)
 
 
 
 This results in the graph below where the number of collisions are shown but only when the 3 messages of 1 devices are not received it will results in a failed transmission (packet error).
 
-
+![GCapacity Lora](/images/sigfox_1000_dev_3_tx)
 
 
 
@@ -76,13 +76,13 @@ If the redundancy is removed and only 1 message is send (hence less collisions b
 
 
 
-
+![GCapacity Lora](/images/sigfox_1000_dev_1_tx)
 
 
 
 Let's look at the extreme case where up to 10000 devices will transmit within 1 minute.
 
-
+![GCapacity Lora](/images/sigfox_10000_dev_3_tx)
 
 
 

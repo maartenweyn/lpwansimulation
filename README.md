@@ -48,27 +48,27 @@ The image below shows a simulation of 500 random messages where every message co
 
 The next figure shows the relation of the number of collisions while sending up to 1000 (25 byte) messages / minute with a randomly chosen SF (between 12 en 7).
 
-![lora_1000_dev_sf_12_7](/images/lora_1000_dev_sf_12_7)
+![lora_1000_dev_sf_12_7](/images/lora_1000_dev_sf_12_7.png)
 
 If we look into an ideal case where we only use SF7, resulting a short message (36 ms).
 
-![lora_1000_dev_sf_7_7](/images/lora_1000_dev_sf_7_7)
+![lora_1000_dev_sf_7_7](/images/lora_1000_dev_sf_7_7.png)
 
 And the worst case (using SF12, resulting in 682 ms)
 
-![lora_1000_dev_sf_12_12](/images/lora_1000_dev_sf_12_12)
+![lora_1000_dev_sf_12_12](/images/lora_1000_dev_sf_12_12.png)
 
 ### Sigfox
 Sigfox sends 3 messages using on a random frequency within a 200 kHz band in the 868 SDR band. Sigfox uses 100Hz ultra-narrowband GFSK modulation.
 The following simulation shows these 200 kHz when 1000 devices are transmitting within 1 minutes, in total 3000 messages are being send.
 
-![sigfox_spectrum_1000_dev_3_tx](/images/sigfox_spectrum_1000_dev_3_tx)
+![sigfox_spectrum_1000_dev_3_tx](/images/sigfox_spectrum_1000_dev_3_tx.png)
 
 
 
 This results in the graph below where the number of collisions are shown but only when the 3 messages of 1 devices are not received it will results in a failed transmission (packet error).
 
-![sigfox_1000_dev_3_tx](/images/sigfox_1000_dev_3_tx)
+![sigfox_1000_dev_3_tx](/images/sigfox_1000_dev_3_tx.png)
 
 
 
@@ -77,13 +77,13 @@ If the redundancy is removed and only 1 message is send (hence less collisions b
 
 
 
-![sigfox_1000_dev_1_tx](/images/sigfox_1000_dev_1_tx)
+![sigfox_1000_dev_1_tx](/images/sigfox_1000_dev_1_tx.png)
 
 
 
 Let's look at the extreme case where up to 10000 devices will transmit within 1 minute.
 
-![sigfox_10000_dev_3_tx](/images/sigfox_10000_dev_3_tx)
+![sigfox_10000_dev_3_tx](/images/sigfox_10000_dev_3_tx.png)
 
 
 
